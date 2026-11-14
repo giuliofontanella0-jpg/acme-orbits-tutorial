@@ -1,0 +1,33 @@
+title: Orbits and observability
+author: Giulio Fontanella (GSSI)
+copyright: "2026"
+
+execute:
+  execute_notebooks: "off"   # the student notebook has TODO cells: never run it at build time
+
+exclude_patterns: [_build, README.md, "**.ipynb_checkpoints", ".github"]
+
+repository:
+  url: https://github.com/giuliofontanella0-jpg/acme-orbits-tutorial
+  branch: main
+
+launch_buttons:
+  binderhub_url: "https://mybinder.org"
+  notebook_interface: "jupyterlab"
+
+html:
+  use_repository_button: true
+  use_issues_button: true
+  use_edit_page_button: false
+  home_page_in_navbar: true
+
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - dollarmath
+    - colon_fence
+    - deflist
+
+sphinx:
+  config:
+    html_show_sourcelink: false
