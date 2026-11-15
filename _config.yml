@@ -6,7 +6,7 @@ copyright: "2026"
 execute:
   execute_notebooks: "off"   # the student notebook has TODO cells: never run it at build time
 
-exclude_patterns: [_build, README.md, "**.ipynb_checkpoints", ".github"]
+exclude_patterns: [_build, README.md, start, "**.ipynb_checkpoints", ".github"]
 
 repository:
   url: https://github.com/giuliofontanella0-jpg/acme-orbits-tutorial

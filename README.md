@@ -14,6 +14,7 @@ notebook/                      student notebook + the Earth texture it needs
 _config.yml, _toc.yml          Jupyter Book configuration and table of contents
 requirements.txt               what the notebook needs (also used by Binder)
 requirements-book.txt          what is needed to build the website
+start                          Binder start-up script (limits numpy to one thread: Binder gives one CPU core)
 .github/workflows/deploy.yml   builds the site and publishes it on every push to main
 ```
 
