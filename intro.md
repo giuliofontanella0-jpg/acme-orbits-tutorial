@@ -1,29 +1,11 @@
-# Orbits and observability
+# Orbits and Observability
 
-```{image} _static/acme_eu.png
-:alt: ACME — Astrophysics Centre for Multimessenger studies in Europe. Funded by the European Union.
-:width: 62%
-```
-```{image} _static/gssi.png
-:alt: Gran Sasso Science Institute
-:width: 30%
-```
-
-**From the orbital elements to what a detector sees in the sky.**
+<p style="font-size: 1.7em; line-height: 1.3; font-weight: 600; margin: 0.6em 0 0.8em 0;">From the orbital elements to what a detector sees in the sky.</p>
 
 **Giulio Fontanella** — Gran Sasso Science Institute (GSSI)
 
 Welcome! This site collects the material of a hands-on session of the
-[ACME project](https://www.acme-astro.eu) on satellite orbits and sky observability:
-one hour of theory, then two hours on a Jupyter notebook.
-
-```{figure} theory/img/fig-slide-01.png
-:width: 75%
-:align: center
-
-The direction straight above Crystal Eye (its zenith) during one revolution, drawn on
-the galactic sky. By the end of the session you will be able to compute it.
-```
+[ACME project](https://www.acme-astro.eu) on satellite orbits and sky observability.
 
 ## Contents
 
@@ -61,8 +43,12 @@ notebook.
 ---
 
 ```{image} _static/acme_eu.png
-:alt: ACME — Funded by the European Union
-:width: 45%
+:alt: ACME — Astrophysics Centre for Multimessenger studies in Europe. Funded by the European Union.
+:width: 58%
+```
+```{image} _static/gssi.png
+:alt: Gran Sasso Science Institute
+:width: 28%
 ```
 
 *Funded by the European Union. Views and opinions expressed are however those of the
