@@ -16,5 +16,3 @@ parts:
       - file: hands_on
       - file: notebook/ACME_orbits_handson_students
         title: Student notebook
-      - file: notebook/ACME_orbits_handson
-        title: Complete notebook (solutions)
