@@ -1,7 +1,7 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Theory
+  - caption: Theory slides
     numbered: true
     chapters:
       - file: theory/01_orbits
@@ -11,7 +11,7 @@ parts:
       - file: theory/05_sky
       - file: theory/06_exposure
       - file: theory/07_j2_sky
-  - caption: Hands-on
+  - caption: Interactive Notebooks
     chapters:
       - file: hands_on
       - file: notebook/ACME_orbits_handson_students
