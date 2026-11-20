@@ -1,102 +1,114 @@
 # The beta angle and eclipses
 
-*Notebook section 5 (exercise 5) · slides 14–16*
+*Notebook section 5 (exercise 5)*
 
 ## The beta angle
 
 ```{figure} img/slide-14.png
 :width: 100%
 
-Slide 14 — *The beta angle*
+*The beta angle*
 ```
 
-The **beta angle** $\beta$ is the elevation of the Sun above the orbital plane: the
-angle between the Sun direction $\hat{\mathbf s}$ and its projection on the plane.
+**Why $\sin\beta = \hat{\mathbf s}\cdot\hat{\mathbf n}$.** The dot product of two unit
+vectors is the cosine of the angle between them. The angle between the Sun and the
+orbit normal is $90° - \beta$, and $\cos(90° - \beta) = \sin\beta$. So one dot product
+gives $\beta$, with its sign: $\beta > 0$ when the Sun is on the side of the plane where
+$\hat{\mathbf n}$ points. ($\hat{\mathbf n}$ is the same vector written $\hat{\mathbf h}$
+in the pages on the sky.)
 
-Let $\hat{\mathbf n}$ be the unit vector perpendicular to the orbital plane (the
-*orbit normal*; it is written $\hat{\mathbf h}$ in the pages on the sky). The angle
-between $\hat{\mathbf s}$ and $\hat{\mathbf n}$ is $\pi/2 - \beta$, so
+**Where $\hat{\mathbf n}$ comes from.** Before the two rotations of the propagator the
+orbit lies in the $xy$ plane and its normal is $(0, 0, 1)$. Applying
+$R_z(\Omega)\,R_x(i)$ to $(0, 0, 1)$ picks out the third column of the product:
+$(\sin i\sin\Omega,\ -\sin i\cos\Omega,\ \cos i)$. It depends only on $i$ and $\Omega$,
+not on where the satellite is along the orbit.
 
-$$
-\sin\beta = \hat{\mathbf s}\cdot\hat{\mathbf n},
-\qquad
-\hat{\mathbf n} = (\sin i\,\sin\Omega,\ -\sin i\,\cos\Omega,\ \cos i)
-$$
+**Why the cycle lasts $360°/|\dot\Omega - 0.9856°/\text{day}|$.** $\beta$ depends on where
+the node is with respect to the Sun. The node moves at $\dot\Omega$, the Sun moves along
+the ecliptic at $0.9856°$ per day: the angle between them changes at the difference of
+the two rates, and $\beta$ repeats when this angle has changed by 360°.
 
-$\hat{\mathbf n}$ depends only on $i$ and $\Omega$: it is the third column of
-$R_z(\Omega)\,R_x(i)$.
+- Crystal Eye: $360 / |-5.957 - 0.986| = 360 / 6.943 = 51.9$ days.
+- ISS: $360 / |-4.947 - 0.986| = 360 / 5.933 = 60.7$ days.
+- NUSES: the two rates are equal, the denominator is zero and there is no cycle. Only
+  the seasons remain, because the Sun moves north and south of the equator during the
+  year.
 
-- $\beta = 0$: the Sun is in the orbital plane. Eclipses are the longest.
-- Large $|\beta|$: the orbit can be in full sunlight.
-
-**Why $\beta$ changes.** For two reasons: the Sun moves along the ecliptic by about
-1° per day, and J2 turns the node. One cycle of $\beta$ lasts
-
-$$
-\frac{360°}{|\dot\Omega - 0.9856\ °/\mathrm{day}|}
-$$
-
-which gives 51.9 days for Crystal Eye and 60.7 days for the ISS. For a sun-synchronous
-orbit the denominator is zero: there is no cycle, and only the seasons remain.
-
-**Bound.** $|\beta| \le i + \varepsilon$, where $\varepsilon$ is the obliquity of the
-ecliptic. This holds when $i + \varepsilon \le 90°$; there is no such bound for polar
-and sun-synchronous orbits.
-
-For a detector that points to the zenith, $|\beta|$ is also the smallest angle between
-the Sun and the detector axis during one revolution, because the zenith always lies in
-the orbital plane.
+**Why $|\beta| \le i + \varepsilon$.** The orbit normal is always at an angle $i$ from
+the North Pole. The Sun is always within $\varepsilon = 23.44°$ of the celestial equator,
+that is between $90° - \varepsilon$ and $90° + \varepsilon$ from the North Pole. The two
+directions can therefore never be closer than $90° - i - \varepsilon$, so the Sun can
+never be higher than $i + \varepsilon$ above the orbital plane. For Crystal Eye this is
+$37° + 23.44° = 60.4°$. When $i + \varepsilon > 90°$ (polar and sun-synchronous orbits)
+the bound says nothing, because $\beta$ cannot exceed 90° anyway.
 
 ## How long in the Earth's shadow?
 
 ```{figure} img/slide-15.png
 :width: 100%
 
-Slide 15 — *How long in the Earth's shadow?*
+*How long in the Earth's shadow?*
 ```
 
-We model the shadow of the Earth as a cylinder of radius $R$ behind the Earth. The
-satellite is in shadow when it is on the night side and its distance from the axis of
-the shadow is smaller than $R$.
+**The model.** The shadow of the Earth is a cylinder of radius $R$ behind the Earth,
+with its axis opposite to the Sun. The satellite is in shadow when it is on the night
+side ($\mathbf r\cdot\hat{\mathbf s} < 0$) and its distance from the axis is smaller
+than $R$. The Sun is 150 million km away, so its rays are almost parallel and the real
+shadow cone is so long that at 550 km it is very close to a cylinder.
 
-Define the angle $\rho$ by
+**The formula, step by step.**
+
+1. Let $\psi$ be the angle of the satellite along the orbit, counted from the point
+   nearest to the Sun. The Sun is $\beta$ above the plane, so
+   $\mathbf r\cdot\hat{\mathbf s} = a\cos\beta\cos\psi$.
+2. The squared distance from the axis of the shadow is the squared length of
+   $\mathbf r$ minus the squared component along the axis:
+   $d^2 = a^2 - (a\cos\beta\cos\psi)^2 = a^2(1 - \cos^2\beta\cos^2\psi)$.
+3. In shadow: $d < R$. Dividing by $a^2$ and using $\sin\rho = R/a$:
 
 $$
-\sin\rho = \frac{R}{a}
+1 - \cos^2\beta\cos^2\psi < \sin^2\rho
+\quad\Longleftrightarrow\quad
+\cos^2\beta\cos^2\psi > \cos^2\rho
+\quad\Longleftrightarrow\quad
+|\cos\psi| > \frac{\cos\rho}{\cos\beta}
 $$
 
-$\rho$ is the angular radius of the Earth seen from the satellite. The duration of the
-eclipse in one revolution is
+4. On the night side $\cos\psi < 0$, so the shadow is the arc around $\psi = 180°$ with
+   half-width $\arccos(\cos\rho/\cos\beta)$. Its whole width, divided by 360°, is the
+   fraction of the revolution in shadow; multiplied by $T_n$ it gives the duration:
 
 $$
-D = \frac{T_n}{\pi}\,\arccos\!\left(\frac{\cos\rho}{\cos\beta}\right),
-\qquad
-D = 0 \ \text{ if } |\beta| \ge \rho
+D = \frac{2\arccos(\cos\rho/\cos\beta)}{2\pi}\,T_n = \frac{T_n}{\pi}\,\arccos\!\left(\frac{\cos\rho}{\cos\beta}\right)
 $$
 
-- If $a\,\sin|\beta| < R$ there is an eclipse on every revolution.
-- If $a\,\sin|\beta| > R$ the satellite never enters the shadow. The limit is the
-  **critical beta** $\beta^* = \rho$: 67.0° at 550 km, 69.75° for the ISS.
+**Why the limit is $|\beta| = \rho$.** The arccos exists only while
+$\cos\rho/\cos\beta \le 1$, that is $\cos\beta \ge \cos\rho$, or $|\beta| \le \rho$. When
+$|\beta| = \rho$ the orbit just grazes the edge of the shadow; above it, it passes beside
+the shadow without entering. The same condition written with distances is the one on the
+slide: $a\sin|\beta|$ is how far the orbital plane is from the axis of the shadow, and
+it must be smaller than $R$.
 
-**Worked numbers, 550 km, $\beta = 0$.** The fraction of the revolution in shadow is
-$\rho/180° = 37.2\,\%$, that is 35.5 min out of 95.4. This is the longest possible
-eclipse at this altitude. As $|\beta|$ grows the eclipse becomes shorter, and it
-disappears when $|\beta|$ reaches $\rho$.
+**Why $\rho$ is the angular radius of the Earth.** From the satellite, the line of sight
+that just touches the Earth makes a right triangle with the radius $R$ (at the tangent
+point) and the distance $a$ (to the centre): $\sin\rho = R/a$. The same angle appears in
+the pages on the sky, where it decides what the Earth hides.
 
 ## A whole mission of eclipses
 
 ```{figure} img/slide-16.png
 :width: 100%
 
-Slide 16 — *A whole mission of eclipses*
+*A whole mission of eclipses*
 ```
 
-- **Crystal Eye:** $\beta$ oscillates within ±60°, with a period of about 52 days. It
-  never exceeds $\beta^* = 67°$, so there is an eclipse on every orbit, of 20 to 36
-  minutes.
-- **NUSES (sun-synchronous):** $\beta$ moves only with the seasons, between 46° and
-  64°. Eclipses last 15–30 min and are predictable.
-- **ISS:** $\beta$ reaches ±74°, above its $\beta^* = 69.8°$: about 29.5 days of full
-  sunlight in three years.
+**Reading the three cases with the two previous slides.**
 
-Stable illumination is one of the reasons why sun-synchronous orbits are chosen.
+- **Crystal Eye:** the bound $|\beta| \le i + \varepsilon = 60.4°$ is below
+  $\beta^* = 67.0°$. $\beta$ can never reach the critical value, so every orbit has an
+  eclipse. The plot oscillates with the 52-day cycle.
+- **ISS:** the bound is $51.64° + 23.44° = 75.1°$, above its $\beta^* = 69.75°$. When
+  $|\beta|$ climbs above 69.75° the orbit stays in sunlight for several days in a row.
+- **NUSES:** there is no cycle; $\beta$ follows the seasons and stays far from 0. The
+  eclipses are never the longest possible and change slowly, which keeps the power and
+  the temperature of the satellite stable.

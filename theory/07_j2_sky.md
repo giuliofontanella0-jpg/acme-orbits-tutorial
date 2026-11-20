@@ -1,69 +1,66 @@
 # Switching J2 on
 
-*Notebook section 9 (exercises 9, 9.0 and 9.3) · slides 23–25*
+*Notebook section 9 (exercises 9, 9.0 and 9.3)*
 
 ## Where the zenith points
 
 ```{figure} img/slide-23.png
 :width: 100%
 
-Slide 23 — *Switching J2 on: where the zenith points*
+*Switching J2 on: where the zenith points*
 ```
 
-Each dot is a direction where the zenith (the axis of the detector) pointed during the
-three years of Crystal Eye. The colour is the day of the mission.
+**Why the zenith spreads over the sky.** In one revolution the zenith draws one great
+circle: the orbital plane seen on the sky. Without J2 the plane is fixed, so every
+revolution draws the same circle. With J2 the node moves by 5.96° per day, so each day
+the circle is turned a little around the celestial poles. In $1096/60.4 = 18$ full turns
+of the node, the circles fill a band of the sky.
 
-- **Keplerian (left):** the orbital plane is fixed. The zenith runs on the same great
-  circle on every revolution, for three years.
-- **With J2 (right):** the node turns by 5.96° per day, one full turn every 60.4 days,
-  18 turns in three years. The circle moves and the zenith visits a large part of the
-  sky.
-- **The two empty regions** around the celestial poles: the zenith can never go beyond
-  $\mathrm{Dec} = \pm i = \pm 37°$.
+**Why $|\mathrm{Dec}| \le i$.** The $z$ component of the zenith is $\sin u\,\sin i$
+(third row of the propagator). Its largest value is $\sin i$, at $u = 90°$, so the
+declination of the zenith never exceeds $i$. J2 turns the plane around the polar axis
+but does not change $i$, so the limit stays: the two empty regions are the directions
+more than 37° from the celestial equator, which are never straight above the detector.
+The band $|\mathrm{Dec}| \le 37°$ is $\sin 37° = 60\,\%$ of the sky.
 
-```{important}
-These maps are **not** the visible sky. With FoV = 360° the detector sees everything
-above the horizon, 69.5 % of the sky, at every instant, with or without J2: this
-depends only on the altitude. J2 changes *where the zenith points*, not *how much sky
-is seen*.
-```
+The directions in the empty regions are still observed: they are never at the zenith,
+but they are above the horizon for part of the time, seen from the side.
 
 ## What J2 changes in the exposure
 
 ```{figure} img/slide-24.png
 :width: 100%
 
-Slide 24 — *What J2 changes in the exposure*
+*What J2 changes in the exposure*
 ```
 
-Top row: Keplerian. Bottom row: with J2. The colour is the percentage of the mission
-time in which each direction is observed (FoV = 360°).
+**Why every direction moves towards the average.** With a fixed plane, a direction keeps
+the same distance from the plane, $\beta_\mathrm{src}$, for the whole mission: it is
+either always near the plane (low exposure) or always far from it (high exposure). With
+J2 the plane turns, so $\beta_\mathrm{src}$ of each direction changes during the mission:
+the same direction spends some weeks near the plane and some weeks far from it. Its
+exposure becomes an average over many values of $\beta_\mathrm{src}$, and all the averages
+end up close to each other.
 
-- **Keplerian:** the plane is fixed, so some directions are always favoured and some
-  always penalised. For Crystal Eye the exposure goes from 62.8 % (the band of the
-  orbital plane) to 100 % (the two caps around the poles of the orbit, 7.9 % of the
-  sky).
-- **With J2:** the plane turns. Every direction is sometimes near the plane and
-  sometimes far from it, so all the directions end up close to the average: 64 % to
-  77 % for Crystal Eye. No direction is observed 100 % of the time.
+**Why the sky average does not change.** At every instant the detector sees 69.5 % of the
+sky (the cap with $\theta \le 113°$); this depends only on $\rho$, that is on the altitude.
+Added over the mission, the total observing time spread over the sky is the same with or
+without J2: J2 only decides how it is shared among the directions.
 
-The average over the sky is 69.5 % in both cases. J2 does not add or remove sky: it
-spreads the exposure more evenly.
+**Why the Crab is hidden less with J2.** In the Keplerian case the Crab has
+$\beta_\mathrm{src} = -1.45°$ for the whole mission, almost in the plane: the worst case,
+hidden 37 % of every revolution. With J2 its $\beta_\mathrm{src}$ changes as the node
+turns; when $|\beta_\mathrm{src}|$ is large the occultations are shorter, like eclipses at
+large $|\beta|$. In exercise 9.0, after 30 days of Crystal Eye the node has turned by
+−178.7° and the Crab has moved from $\beta_\mathrm{src} = -1.5°$ to $+37.9°$.
 
-**The Crab, hidden by the Earth over the whole mission:**
-
-| mission | Keplerian | with J2 |
-|---|---|---|
-| Crystal Eye | 37.2 % | 33.9 % |
-| NUSES | 37.0 % | 28.2 % |
-| ISS | 38.5 % | 32.2 % |
-
-With the Keplerian orbit the Crab lies almost in the orbital plane, the worst place.
-With J2 it moves towards the average and is hidden less. A source inside a Keplerian
-cap (never hidden) would instead be hidden more with J2.
-
-The Keplerian model is an approximation that freezes the plane. The real orbit always
-has J2.
+**Why NUSES changes the most (37.0 → 28.2 %).** The range that $\beta_\mathrm{src}$ can
+cover while the plane turns depends on the inclination. The orbit normal stays at an
+angle $i$ from the North Pole, and the Crab is at Dec $+22°$. For Crystal Eye
+($i = 37°$) the normal stays near the pole, and $\beta_\mathrm{src}$ of the Crab only
+ranges from −15° to +59°. For the ISS it ranges from −30° to +74°. NUSES is almost polar:
+its normal moves close to the celestial equator, and $\beta_\mathrm{src}$ ranges from −75°
+to +60°. The Crab spends more time far from the plane of NUSES, so it is hidden less.
 
 ## Take-aways
 
