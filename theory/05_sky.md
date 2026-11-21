@@ -51,8 +51,6 @@ normal $\hat{\mathbf h}$, the same vector as in the beta angle.
 **Why $Q^T$.** The two operations go in opposite directions: satellite → ECI, then
 ECI → satellite. The second one undoes the first, so it uses the inverse matrix. For a
 rotation the inverse is simply the transpose, $Q^{-1} = Q^T$, so no inversion is needed.
-In two dimensions: turning a vector by $+30°$ gives the same coordinates as turning the
-axes by $-30°$.
 
 $$
 \hat{\mathbf x} = \frac{\mathbf g - (\mathbf g\cdot\hat{\mathbf z})\,\hat{\mathbf z}}{\left|\mathbf g - (\mathbf g\cdot\hat{\mathbf z})\,\hat{\mathbf z}\right|}
