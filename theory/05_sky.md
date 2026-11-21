@@ -48,17 +48,6 @@ normal $\hat{\mathbf h}$, the same vector as in the beta angle.
   direction $\hat{\mathbf k}$ is fixed in ECI, and we want it described along the axes
   of the satellite (zenith, along-track, normal): $\hat{\mathbf k}_\mathrm{sat} = Q^T\,\hat{\mathbf k}$.
 
-**Why $Q^T$.** The two operations go in opposite directions: satellite → ECI, then
-ECI → satellite. The second one undoes the first, so it uses the inverse matrix. For a
-rotation the inverse is simply the transpose, $Q^{-1} = Q^T$, so no inversion is needed.
-
-$$
-\hat{\mathbf x} = \frac{\mathbf g - (\mathbf g\cdot\hat{\mathbf z})\,\hat{\mathbf z}}{\left|\mathbf g - (\mathbf g\cdot\hat{\mathbf z})\,\hat{\mathbf z}\right|}
-$$
-
-where $\mathbf g$ is the unit vector of the Galactic Centre. The third axis is the cross
-product $\hat{\mathbf z}\times\hat{\mathbf x}$, which is perpendicular to both by
-construction and makes a right-handed frame.
 
 ## All-sky maps: Mollweide and conventions
 
