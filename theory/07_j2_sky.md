@@ -23,8 +23,6 @@ but does not change $i$, so the limit stays: the two empty regions are the direc
 more than 37° from the celestial equator, which are never straight above the detector.
 The band $|\mathrm{Dec}| \le 37°$ is $\sin 37° = 60\,\%$ of the sky.
 
-The directions in the empty regions are still observed: they are never at the zenith,
-but they are above the horizon for part of the time, seen from the side.
 
 ## What J2 changes in the exposure
 
@@ -38,14 +36,7 @@ but they are above the horizon for part of the time, seen from the side.
 the same distance from the plane, $\beta_\mathrm{src}$, for the whole mission: it is
 either always near the plane (low exposure) or always far from it (high exposure). With
 J2 the plane turns, so $\beta_\mathrm{src}$ of each direction changes during the mission:
-the same direction spends some weeks near the plane and some weeks far from it. Its
-exposure becomes an average over many values of $\beta_\mathrm{src}$, and all the averages
-end up close to each other.
-
-**Why the sky average does not change.** At every instant the detector sees 69.5 % of the
-sky (the cap with $\theta \le 113°$); this depends only on $\rho$, that is on the altitude.
-Added over the mission, the total observing time spread over the sky is the same with or
-without J2: J2 only decides how it is shared among the directions.
+the same direction spends some weeks near the plane and some weeks far from it. 
 
 **Why the Crab is hidden less with J2.** In the Keplerian case the Crab has
 $\beta_\mathrm{src} = -1.45°$ for the whole mission, almost in the plane: the worst case,
@@ -62,12 +53,5 @@ ranges from −15° to +59°. For the ISS it ranges from −30° to +74°. NUSES
 its normal moves close to the celestial equator, and $\beta_\mathrm{src}$ ranges from −75°
 to +60°. The Crab spends more time far from the plane of NUSES, so it is hidden less.
 
-## Take-aways
-
-- Four numbers and an epoch fix a circular orbit; J2 turns its plane.
-- Time matters: UTC → JD → GMST, and the direction of the Sun.
-- $\beta$ decides the eclipses; the same formula decides when a source is hidden.
-- Directions, not positions: the zenith draws a great circle on the sky.
-- Exposure = the time within reach of the detector, Earth and field of view included.
 
 Now open the [notebook](../hands_on.md).
