@@ -13,9 +13,7 @@
 **Where $\sin\rho$ comes from.** In the triangle C–S–T the line from the satellite S to
 the horizon T touches the Earth at T, so it is perpendicular to the radius C–T: the
 angle at T is 90°. The side opposite to the angle $\rho$ (at S) is $R + h_\mathrm{atm}$,
-the hypotenuse is the distance C–S $= a$, so $\sin\rho = (R + h_\mathrm{atm})/a$. With the
-notebook default $h_\mathrm{atm} = 0$: $\sin\rho = 6378.137/6928.137 = 0.9206$,
-$\rho = 67.02°$. With `H_ATM_KM = 100` the Earth looks bigger: $\rho = 69.24°$.
+the hypotenuse is the distance C–S $= a$, so $\sin\rho = (R + h_\mathrm{atm})/a$. 
 
 **How $\theta$ changes.** $\theta$ is not fixed: it is the angle between the zenith and
 the object *at a given instant*,
@@ -30,19 +28,24 @@ $$
 - The FoV is a cone fixed to the detector, around the zenith, so it turns with it and
   sweeps the sky.
 
-During one revolution $\theta$ of a source therefore goes from a minimum, when the zenith
-passes closest to it, to a maximum half an orbit later. The minimum is $|\beta_\mathrm{src}|$
-(the zenith moves in the orbital plane, so it can get no closer than the angle of the
-source from that plane) and the maximum is $180° - |\beta_\mathrm{src}|$. For the Crab,
-with $\beta_\mathrm{src} = -1.45°$, $\theta$ goes from 1.45° to 178.55° and back on every
-revolution. The source is in the FoV while $\theta(t) \le \mathrm{FoV}/2$ and behind the
-Earth while $\theta(t) > 180° - \rho$: with FoV = 120° the Crab enters the cone when
-$\theta$ falls below 60°, leaves it when $\theta$ rises above 60°, and goes behind the Earth
-when $\theta$ passes 113°.
+During one revolution $\theta$ of a source goes from a minimum, when the zenith passes
+closest to it, to a maximum half an orbit later. The zenith moves in the orbital plane,
+so it can never get closer to the source than the angle of the source from that plane:
+the minimum is $|\beta_\mathrm{src}|$ and the maximum is $180° - |\beta_\mathrm{src}|$.
+On the way, $\theta$ crosses the two limits of the rule: the source is in the FoV while
+$\theta(t) \le \mathrm{FoV}/2$, and behind the Earth while $\theta(t) > 180° - \rho$.
 
-**Why the rule is checked in that order.** The Earth is opaque: a direction behind it is
-hidden even if it lies inside the cone. This happens whenever the cone is wider than the
-free sky, FoV/2 > 113°, as in the FoV = 300° example.
+- A source close to the orbital plane ($\beta_\mathrm{src} \approx 0$) sweeps almost the
+  whole range on every revolution, from the zenith to the nadir: it enters the FoV and
+  goes behind the Earth once per orbit.
+- A source far from the plane never comes near the zenith; if $|\beta_\mathrm{src}| > \rho$,
+  $\theta$ never exceeds $180° - \rho$ and the source is never hidden by the Earth.
+
+*Example — Crystal Eye, the Crab, FoV = 120°.* $\beta_\mathrm{src} = -1.45°$, so $\theta$
+goes from 1.45° to 178.55° and back on every revolution. The Crab enters the FoV when
+$\theta$ falls below 60°, leaves it when $\theta$ rises above 60°, and goes behind the
+Earth when $\theta$ passes $180° - 67° = 113°$.
+
 
 ## The exposure map of a Keplerian orbit
 
@@ -72,8 +75,7 @@ the two poles of the orbit, $\pm\hat{\mathbf h}$.
   exposure is always 69.5 %.
 - The two never-hidden caps of 23° cover $2 \times (1 - \cos 23°)/2 = 7.9\,\%$ of the sky.
 
-**How the code counts.** Instead of computing $\theta$ with an arccos for every pixel and
-every instant, the notebook checks $\hat{\mathbf r}\cdot\hat{\mathbf k} \ge \cos(\mathrm{lim})$:
+**How the code counts.**The notebook checks $\hat{\mathbf r}\cdot\hat{\mathbf k} \ge \cos(\mathrm{lim})$:
 the same condition, because the cosine decreases from 0° to 180°, but with one
 multiplication per pixel. The zenith directions are taken at many instants of the
 mission, and for each pixel the instants that satisfy the condition are counted.
@@ -105,7 +107,3 @@ $$
 For the first entry, JD 2462502.528426: the decimal part after .5 is the time since
 midnight, $0.028426 \times 86400 = 2456$ s $= 40$ min 56 s, that is 00:40:56 UTC.
 
-**Why 15 times a day, 35.6 min each.** One occultation per revolution, and a Keplerian
-revolution lasts 95.65 min: $1440/95.65 = 15.06$, so 15 complete occultations fall in the
-first day. Each lasts 35.6 min, the same value found with the eclipse formula and
-$\beta_\mathrm{src} = -1.45°$.
