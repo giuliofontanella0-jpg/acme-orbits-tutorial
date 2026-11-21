@@ -10,11 +10,6 @@
 *Which time? UTC, UT1, Julian date*
 ```
 
-**Why a continuous count of days.** Calendar dates are awkward to compute with: months
-have different lengths and some years have a leap day. The Julian date numbers every
-day in a row, so the time between two dates is one subtraction, and the time inside the
-day is the decimal part.
-
 **What $T$ is.** $T$ measures the time since J2000 in a larger unit: the Julian century,
 100 Julian years of exactly 365.25 days, that is 36525 days. For the start of Crystal Eye:
 
@@ -23,13 +18,11 @@ T = \frac{2462502.5 - 2451545.0}{36525} = \frac{10957.5}{36525} = 0.3
 $$
 
 0.3 centuries are 30 years: from 2000-01-01 12:00 to 2030-01-01 00:00. The number is
-round because 30 Julian years are exactly $30 \times 365.25 = 10957.5$ days. For another
-date it is not round: the epoch of NUSES, 2027-05-01 18:00, gives $T = 0.27330$.
+round because 30 Julian years are exactly $30 \times 365.25 = 10957.5$ days.
 
 The formulas for GMST and for the Sun are polynomials in $T$, with coefficients given
 "per century". Centuries are used because many astronomical quantities (precession, the
-tilt of the Earth's axis) change very little in one year: per century their coefficients
-are convenient numbers, and for dates near 2000 $T$ stays small, between about −1 and +1.
+tilt of the Earth's axis) change very little in one year.
 
 ```{warning}
 Never use local time. One hour of error shifts the ground track by 15°, because the
@@ -43,8 +36,6 @@ Earth turns 15° per hour.
 
 *The Julian date, step by step (Meeus)*
 ```
-
-The symbol $\lfloor x \rfloor$ means "the integer part of $x$".
 
 **Why these steps.**
 
@@ -99,13 +90,8 @@ to the stars since J2000, measured in **seconds of time** (one full turn, 360°,
    orientation, so the full turns do not matter: only the remainder does.
    $10988 \times 86400 = 949\,363\,200$ s, and
    $949\,387\,366.0 - 949\,363\,200 = 24\,166.0$ s.
-   It is the same as reading a clock: 50 hours after midnight are 2 days and 2 hours,
-   and the clock shows 2:00.
 3. **Turn seconds into degrees.** 86400 s correspond to 360°, so 1° is
    $86400/360 = 240$ s: $24\,166.0 / 240 = 100.692°$.
-
-In the notebook steps 2 and 3 are one line, `(s % 86400.0) / 240.0`: the operator `%`
-gives the remainder of the division by 86400.
 
 **Why we need it.** GMST links the sky to the Earth: it is used to convert from a fixed
 position in space to one relative to the Earth. It enables us to visualise the satellite
@@ -156,13 +142,4 @@ All angles are in degrees and $T$ is in Julian centuries since J2000.
   Earth's orbit: $2 \times 0.0167 = 0.0334$ rad $= 1.91°$.
 - $\varepsilon$ is the tilt of the Earth's axis, which changes very slowly.
 
-**Why the formula for $\hat{\mathbf s}$ has that form.** The Sun lies on the ecliptic.
-In ecliptic coordinates its direction is simply $(\cos\lambda_\odot,\ \sin\lambda_\odot,\ 0)$.
-The ecliptic is tilted by $\varepsilon$ with respect to the equator, around the common
-$x$ axis ($\gamma$). Rotating by $\varepsilon$ around $x$ leaves the first component and
-splits the second between $y$ and $z$: $\cos\varepsilon\sin\lambda_\odot$ and
-$\sin\varepsilon\sin\lambda_\odot$.
 
-**Why a unit vector is enough.** For eclipses and for the beta angle only the *direction*
-of the Sun matters: it is 150 million km away, so its direction is the same from every
-point of the orbit.
