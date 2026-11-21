@@ -2,6 +2,56 @@
 
 *Notebook sections 7 and 8 (exercises 7 and 8)*
 
+:::{admonition} The key idea: when does the detector see a source?
+:class: important
+
+Three things decide it:
+
+1. **where the detector points**: the zenith $\hat{\mathbf r}$, which turns once per
+   orbit along the orbital plane;
+2. **how wide it looks**: the field of view, a cone of half-aperture FoV/2 around the
+   zenith;
+3. **what the Earth hides**: a disc of angular radius $\rho$ around the nadir (straight
+   down).
+
+All three are compared through one angle, $\theta$: the angle between the zenith and the
+source **at that instant**.
+
+**The conditions, at each instant**
+
+| condition | the source is… |
+|---|---|
+| $\theta > 180° - \rho$ | **behind the Earth**: hidden, even if it is inside the cone |
+| $\theta \le 180° - \rho$ and $\theta \le$ FoV/2 | **visible**: in the field of view |
+| $\theta \le 180° - \rho$ and $\theta >$ FoV/2 | in free sky, but **outside the field of view** |
+
+At 550 km, $180° - \rho = 113°$: everything more than 113° from the zenith is behind the
+Earth.
+
+**What to monitor**
+
+| parameter | what it tells | what sets it | how it changes |
+|---|---|---|---|
+| $\theta(t)$ | where the source is with respect to the detector axis, now | the orbit and the direction of the source | continuously: one cycle per orbit, between $\lvert\beta_\mathrm{src}\rvert$ and $180° - \lvert\beta_\mathrm{src}\rvert$ |
+| $\beta_\mathrm{src}$ | how far the source is from the orbital plane | the orbital plane ($i$, $\Omega$) and the source | Keplerian orbit: fixed. With J2: changes day by day (see section 7) |
+| $\rho$ | the size of the Earth disc | the altitude (and the absorbing atmosphere, $h_\mathrm{atm}$) | fixed |
+| FoV/2 | the size of the detector cone | the instrument | fixed |
+
+**What follows from $\beta_\mathrm{src}$** (the same logic as $\beta$ for eclipses)
+
+- $\beta_\mathrm{src} \approx 0$, the source in the orbital plane: hidden on every orbit,
+  for the longest time, 37 % of the orbit at 550 km.
+- $0 < |\beta_\mathrm{src}| < \rho$: hidden on every orbit, for less time as
+  $|\beta_\mathrm{src}|$ grows.
+- $|\beta_\mathrm{src}| \ge \rho$: **never hidden** by the Earth.
+- With a limited FoV: if $|\beta_\mathrm{src}| >$ FoV/2 the source **never enters the
+  cone**, because the zenith never gets closer to it than $|\beta_\mathrm{src}|$.
+
+**The analogy:** the occultation of a source is an eclipse seen from the other side. Put
+the source in place of the Sun and $\beta_\mathrm{src}$ in place of $\beta$: the same
+formula gives how long it is hidden.
+:::
+
 ## Earth, horizon and field of view
 
 ```{figure} img/slide-20.png

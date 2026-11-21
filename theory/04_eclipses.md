@@ -2,6 +2,43 @@
 
 *Notebook section 5 (exercise 5)*
 
+:::{admonition} The key idea: when is the satellite in eclipse?
+:class: important
+
+The satellite is in eclipse when the Earth stands between it and the Sun. Whether this
+happens, and for how long, is decided by **one angle, $\beta$**: how high the Sun is
+above the orbital plane.
+
+**The conditions**
+
+- $|\beta| < \beta^*$: there is an eclipse **on every orbit**.
+- $|\beta| \ge \beta^*$: **no eclipse**; the orbit passes beside the Earth's shadow and
+  stays in sunlight.
+- The threshold is $\beta^* = \rho$, the angular radius of the Earth seen from the
+  satellite: 67.0° at 550 km, 69.75° at 420 km. It depends only on the altitude.
+
+**How long**
+
+The eclipse is longest at $\beta = 0$ (the Sun in the orbital plane) and gets shorter as
+$|\beta|$ grows. It changes little at first and drops fast near $\beta^*$:
+
+| $\beta$ | 0° | 30° | 50° | 60° | 65° | 67° |
+|---|---|---|---|---|---|---|
+| eclipse at 550 km | 35.5 min | 33.5 min | 27.9 min | 20.5 min | 11.9 min | 0 |
+
+**What to monitor**
+
+| parameter | what it tells | what sets it | how it changes |
+|---|---|---|---|
+| $\beta$ | how high the Sun is above the orbital plane | the orbital plane ($i$, $\Omega$) and the position of the Sun | every day: the node drifts (J2) and the Sun moves along the ecliptic. Cycle of 52 days for Crystal Eye, 61 days for the ISS; for NUSES (sun-synchronous) only with the seasons |
+| $\beta^* = \rho$ | the threshold above which there is no eclipse | the altitude | fixed for a circular orbit |
+| largest $\lvert\beta\rvert$ of the mission | whether there are periods with no eclipse | the inclination (plus the 23.44° tilt of the Earth's axis) | fixed: Crystal Eye never reaches $\beta^*$, so it has an eclipse on every orbit; the ISS exceeds it, so it has days of full sunlight |
+| $T_n$ | the length of one orbit, which sets the scale of the eclipse | the altitude | fixed |
+
+**In practice:** to know the eclipses of a mission, follow $\beta(t)$ for the whole
+mission and compare it with $\beta^*$.
+:::
+
 ## The beta angle
 
 ```{figure} img/slide-14.png
