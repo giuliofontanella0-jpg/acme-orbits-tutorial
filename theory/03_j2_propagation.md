@@ -10,14 +10,11 @@
 *The Earth is not a sphere: the J2 perturbation*
 ```
 
-**The size of the bulge.** The equatorial radius of the Earth is 6378.137 km, the polar
-radius 6356.752 km: 21.4 km more at the equator. $J_2$ measures how much this extra mass
+$J_2$ measures how much the extra mass of the Earth
 changes the gravity field; for a perfect sphere $J_2 = 0$.
 
-**Why the plane turns instead of falling to the equator.** Over one revolution the bulge
-pulls the satellite towards the equatorial plane: it is a torque on the orbit. The orbit
-behaves like a spinning top, or a gyroscope: a torque does not tilt it, it makes its axis
-turn around. The axis of the orbit (its normal) turns around the polar axis, so the
+**Why the plane turns.** During an orbit, the difference in mass exerts a torque on the orbit. 
+The axis of the orbit (its normal) turns around the polar axis, so the
 inclination $i$ stays the same and the node $\Omega$ moves. This is the **nodal drift**.
 
 **Reading the formulas.**
@@ -35,25 +32,10 @@ inclination $i$ stays the same and the node $\Omega$ moves. This is the **nodal 
   nodal period is shorter than the Keplerian one. Between 60° and 120° it is the
   opposite.
 
-**The numbers for Crystal Eye**, step by step:
-
-$$
-\dot\Omega = -1.5 \times 9.176\times10^{-4} \times 1.0948\times10^{-3} \times \cos 37°
-= -1.2034\times10^{-6}\ \text{rad/s}
-$$
-
-In degrees per day: $-1.2034\times10^{-6} \times \frac{180}{\pi} \times 86400 = -5.96°$
-per day, one full turn of the plane in $360/5.957 = 60.4$ days.
-
-The periods: $T_k = 2\pi/n = 95.650$ min, $T_n = 95.446$ min. Crystal Eye has $i = 37°$,
-so $T_n < T_k$; NUSES has $i = 97.59°$, so $T_n = 95.773 > 95.650$ min.
-
 **Why sun-synchronous is useful.** For NUSES the node turns east by one turn per year,
 like the Sun. The angle between the orbital plane and the Sun then stays almost the same
 all year: the satellite crosses each latitude at the same local solar time, and the
-illumination (eclipses, beta angle) is stable. At 550 km this happens only for
-$i = 97.59°$: setting $\dot\Omega = 360°/365.2422$ days in the formula gives
-$\cos i = -0.1321$.
+illumination (eclipses, beta angle) is stable. 
 
 ## Propagating the orbit
 
@@ -119,6 +101,3 @@ north-**west**, against the rotation of the Earth. On the map the red and purple
 go from left to right, the green one of NUSES from right to left; it is also almost
 vertical, because $i$ is close to 90° and the orbit passes near the poles.
 
-NUSES needs a retrograde orbit to be sun-synchronous: its node must drift eastward, and
-the formula for $\dot\Omega$ gives an eastward drift only when $\cos i < 0$, that is
-$i > 90°$.
