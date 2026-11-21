@@ -39,16 +39,6 @@ normal $\hat{\mathbf h}$, the same vector as in the beta angle.
 *Rotations and the galactic frame*
 ```
 
-**Active and passive rotations.** The same rotation matrix can be used in two ways.
-
-- **Active: the vector moves, the frame stays.** The propagator does this. It starts
-  from the satellite on the $x$ axis of its own orbital plane, $(a, 0, 0)$, and turns
-  it into its position in ECI: $\mathbf r = Q\,(a, 0, 0)^T$.
-- **Passive: the vector stays, the frame moves.** We do this with a source. Its
-  direction $\hat{\mathbf k}$ is fixed in ECI, and we want it described along the axes
-  of the satellite (zenith, along-track, normal): $\hat{\mathbf k}_\mathrm{sat} = Q^T\,\hat{\mathbf k}$.
-
-
 ## All-sky maps: Mollweide and conventions
 
 ```{figure} img/slide-19.png
