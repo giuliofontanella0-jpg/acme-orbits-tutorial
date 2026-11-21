@@ -10,8 +10,8 @@
 *What is an orbit?*
 ```
 
-**Where the formulas come from.** On a circular orbit of radius $a$ the satellite moves
-at constant speed $v$. To stay on the circle it needs a centripetal acceleration $v^2/a$,
+On a circular orbit of radius $a$ the satellite moves at constant speed $v$.
+To stay on the circle it needs a centripetal acceleration $v^2/a$,
 pointing to the centre of the Earth. Gravity supplies exactly this acceleration, and
 gravity at distance $a$ is $\mu/a^2$:
 
@@ -22,8 +22,7 @@ v = \sqrt{\frac{\mu}{a}}
 $$
 
 Here $\mu = GM = 398\,600.4418\ \mathrm{km^3/s^2}$ is the gravitational constant times the
-mass of the Earth. The mass of the satellite does not appear: it cancels, because both
-the force of gravity and the inertia are proportional to it. Every satellite at the same
+mass of the Earth. Every satellite at the same
 altitude has the same speed and the same period.
 
 The period is the length of the circle divided by the speed:
@@ -36,12 +35,6 @@ The altitude $h$ is measured above a spherical Earth of radius $R = 6378.137$ km
 $a = R + h$. At 550 km: $a = 6928.137$ km, $v = \sqrt{398\,600.4418/6928.137} = 7.585$ km/s,
 $T = 2\pi\sqrt{6928.137^3/398\,600.4418} = 5739$ s $= 95.65$ min, and
 $1440/95.65 \approx 15$ revolutions per day.
-
-**"The satellite falls around the Earth."** At 550 km gravity is still
-$\mu/a^2 = 8.30\ \mathrm{m/s^2}$, 85 % of its value on the ground. The satellite is
-falling towards the Earth all the time; it also moves sideways fast enough to keep
-missing it. This is why $v$ is fixed by $a$: slower, and the path would bend down into
-the atmosphere; faster, and it would open into an ellipse.
 
 ## Six numbers describe an orbit
 
@@ -76,13 +69,7 @@ satellite.
 - The angle from the node to the satellite still exists, because it does not pass
   through the perigee. It is their sum, the **argument of latitude** $u = \omega + \nu$.
 
-On a circle the pairs $(30°, 60°)$, $(50°, 40°)$ and $(0°, 90°)$ all put the satellite
-in the same place: only the sum $u = 90°$ matters. In the notebook the satellite is
-moved along the orbit by advancing $u$ directly, $u(t) = u_0 + \dot u\,t$.
-
-The same happens on real, nearly circular orbits ($e \approx 0.001$ in LEO): the perigee
-exists but is poorly determined, so $\omega$ jumps from one orbit determination to the
-next, while $u$ stays stable.
+ n the notebook the satellite is moved along the orbit by advancing $u$ directly, $u(t) = u_0 + \dot u\,t$.
 
 ## Our three missions
 
@@ -92,7 +79,7 @@ next, while $u$ stays stable.
 *Our three missions*
 ```
 
-**Why these three.** They cover three typical inclinations of LEO missions: a low
+They cover three typical inclinations of LEO missions: a low
 inclination (Crystal Eye, 37°), a medium one (ISS, 51.6°) and a sun-synchronous one
 (NUSES, 97.6°). The same notebook runs on all three, so every result can be compared.
 
@@ -101,10 +88,4 @@ by the mission design, but $\Omega$ depends on the time of the launch: the same 
 launched a few hours later, puts the plane at a different $\Omega$. For Crystal Eye and
 the ISS we choose one simple case: at the epoch the ascending node is on the meridian of
 Kourou. To turn "above Kourou" into an angle measured from $\gamma$ we need to know how
-far the Earth has turned at that moment, that is GMST (see [](02_time.md)):
-$\Omega = \mathrm{GMST}(t_0) + \lambda_\mathrm{Kourou} = 100.692° - 52.65° = 48.04°$.
-For NUSES $\Omega = 99.05°$ is taken from the mission.
-
-**Crystal Eye** is a concept of an all-sky X/gamma-ray monitor; **NUSES** is the GSSI
-pathfinder mission; the **ISS** is a familiar reference, and its dates here are only
-illustrative. The nodal period $T_n$ is defined in [](03_j2_propagation.md).
+far the Earth has turned at that moment, that is GMST (see [](02_time.md)).
