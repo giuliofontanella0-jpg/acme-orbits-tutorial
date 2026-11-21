@@ -43,8 +43,7 @@ than $R$.
 1. Let $\psi$ be the angle of the satellite along the orbit, counted from the point
    nearest to the Sun. The Sun is $\beta$ above the plane, so
    $\mathbf r\cdot\hat{\mathbf s} = a\cos\beta\cos\psi$.
-2. The squared distance from the axis of the shadow is the squared length of
-   $\mathbf r$ minus the squared component along the axis:
+2. The squared distance from the axis of the shadow is:
    $d^2 = a^2 - (a\cos\beta\cos\psi)^2 = a^2(1 - \cos^2\beta\cos^2\psi)$.
 3. In shadow: $d < R$. Dividing by $a^2$ and using $\sin\rho = R/a$:
 
