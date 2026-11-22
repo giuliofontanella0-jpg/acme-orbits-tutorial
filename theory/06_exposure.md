@@ -91,25 +91,13 @@ closest to it, to a maximum half an orbit later.
 *Exposure map: what a Keplerian orbit observes*
 ```
 
-**Why the minimum is 100 − 37.2 %.** A direction in the orbital plane is like the Sun at
-$\beta = 0$: the zenith passes over it once per revolution, and for the part of the
-revolution where $\theta > 113°$ it is behind the Earth. That part is $\rho/180° = 37.2\,\%$,
-the same number as the longest eclipse. The rest, 62.8 %, is observed.
+The Earth covers a direction in the same way it covers the Sun. The more a direction is far from the orbital plane,
+\beta_\mathrm{src} is higher, the less the zenith ‘circles round it, passing beneath the Earth’.
+The hidden arc shortens, following the same pattern as the duration of eclipses:
 
-**Why the caps have a radius of 23°.** A direction at an angle $\beta_\mathrm{src}$ from
-the plane has $\theta \le 180° - |\beta_\mathrm{src}|$ all the time. If
-$|\beta_\mathrm{src}| > \rho = 67°$, $\theta$ never exceeds $180° - 67° = 113°$: the
-direction is never behind the Earth. These directions are within $90° - 67° = 23°$ of
-the two poles of the orbit, $\pm\hat{\mathbf h}$.
+$$\text{frazione nascosta} = \frac{1}{\pi}\arccos\!\left(\frac{\cos\rho}{\cos\beta_{src}}\right)$$
+It is at its maximum when \beta_\mathrm{src = 0}, so the exposure is at its minimum in the plane: the dark band.
 
-**Two percentages that follow from $\rho$.**
-
-- At any instant the detector sees the cap of sky with $\theta \le 113°$. The fraction
-  of a sphere inside a cap of angular radius $\theta_\mathrm{max}$ is
-  $(1 - \cos\theta_\mathrm{max})/2$, so the visible fraction is
-  $(1 - \cos 113°)/2 = (1 + \cos\rho)/2 = 69.5\,\%$. Averaged over the whole sky, the
-  exposure is always 69.5 %.
-- The two never-hidden caps of 23° cover $2 \times (1 - \cos 23°)/2 = 7.9\,\%$ of the sky.
 
 **How the code counts.**The notebook checks $\hat{\mathbf r}\cdot\hat{\mathbf k} \ge \cos(\mathrm{lim})$:
 the same condition, because the cosine decreases from 0° to 180°, but with one
