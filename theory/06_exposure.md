@@ -60,10 +60,8 @@ closest to it, to a maximum half an orbit later.
 - A source far from the plane never comes near the zenith; if $|\beta_\mathrm{src}| > \rho$,
   $\theta$ never exceeds $180° - \rho$ and the source is never hidden by the Earth.
 
-:::{admonition}
+:::{admonition} What to monitor
 :class: important
-
-**What to monitor**
 
 | parameter | what it tells | what sets it | how it changes |
 |---|---|---|---|
@@ -81,7 +79,7 @@ closest to it, to a maximum half an orbit later.
 - $|\beta_\mathrm{src}| \ge \rho$: **never hidden** by the Earth.
 - With a limited FoV: if $|\beta_\mathrm{src}| >$ FoV/2 the source **never enters the
   cone**, because the zenith never gets closer to it than $|\beta_\mathrm{src}|$.
-:::  
+:::
 
 ## The exposure map of a Keplerian orbit
 
@@ -91,15 +89,18 @@ closest to it, to a maximum half an orbit later.
 *Exposure map: what a Keplerian orbit observes*
 ```
 
-The Earth covers a direction in the same way it covers the Sun. The more a direction is far from the orbital plane,
-\beta_\mathrm{src} is higher, the less the zenith ‘circles round it, passing beneath the Earth’.
+The Earth covers a direction in the same way it covers the Sun. The farther a direction is from the orbital plane
+(the larger $|\beta_\mathrm{src}|$), the less the zenith ‘circles round it, passing beneath the Earth’.
 The hidden arc shortens, following the same pattern as the duration of eclipses:
 
-$$\text{frazione nascosta} = \frac{1}{\pi}\arccos\!\left(\frac{\cos\rho}{\cos\beta_{src}}\right)$$
-It is at its maximum when \beta_\mathrm{src = 0}, so the exposure is at its minimum in the plane: the dark band.
+$$
+\text{hidden fraction} = \frac{1}{\pi}\arccos\!\left(\frac{\cos\rho}{\cos\beta_\mathrm{src}}\right)
+$$
+
+It is at its maximum when $\beta_\mathrm{src} = 0$, so the exposure is at its minimum in the plane: the dark band.
 
 
-**How the code counts.**The notebook checks $\hat{\mathbf r}\cdot\hat{\mathbf k} \ge \cos(\mathrm{lim})$:
+**How the code counts.** The notebook checks $\hat{\mathbf r}\cdot\hat{\mathbf k} \ge \cos(\mathrm{lim})$:
 the same condition, because the cosine decreases from 0° to 180°, but with one
 multiplication per pixel. The zenith directions are taken at many instants of the
 mission, and for each pixel the instants that satisfy the condition are counted.

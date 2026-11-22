@@ -71,15 +71,15 @@ the shadow without entering. The same condition written with distances is the on
 slide: $a\sin|\beta|$ is how far the orbital plane is from the axis of the shadow, and
 it must be smaller than $R$.
 
-:::{admonition}
+:::{admonition} What to monitor
 :class: important
-**What to monitor**
 
 | parameter | what it tells | what sets it | how it changes |
 |---|---|---|---|
 | $\beta$ | how high the Sun is above the orbital plane | the orbital plane ($i$, $\Omega$) and the position of the Sun | every day: the node drifts (J2) and the Sun moves along the ecliptic. Cycle of 52 days for Crystal Eye, 61 days for the ISS; for NUSES (sun-synchronous) only with the seasons |
 | $\beta^* = \rho$ | the threshold above which there is no eclipse | the altitude | fixed for a circular orbit |
 | $T_n$ | the length of one orbit, which sets the scale of the eclipse | the altitude | fixed |
+:::
 
 ## A whole mission of eclipses
 
