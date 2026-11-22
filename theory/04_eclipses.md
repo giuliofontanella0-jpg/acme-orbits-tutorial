@@ -2,6 +2,14 @@
 
 *Notebook section 5 (exercise 5)*
 
+## The beta angle
+
+```{figure} img/slide-14.png
+:width: 100%
+
+*The beta angle*
+```
+
 :::{admonition} The key idea: when is the satellite in eclipse?
 :class: important
 
@@ -22,35 +30,10 @@ above the orbital plane.
 The eclipse is longest at $\beta = 0$ (the Sun in the orbital plane) and gets shorter as
 $|\beta|$ grows. It changes little at first and drops fast near $\beta^*$:
 
-| $\beta$ | 0° | 30° | 50° | 60° | 65° | 67° |
-|---|---|---|---|---|---|---|
-| eclipse at 550 km | 35.5 min | 33.5 min | 27.9 min | 20.5 min | 11.9 min | 0 |
-
-**What to monitor**
-
-| parameter | what it tells | what sets it | how it changes |
-|---|---|---|---|
-| $\beta$ | how high the Sun is above the orbital plane | the orbital plane ($i$, $\Omega$) and the position of the Sun | every day: the node drifts (J2) and the Sun moves along the ecliptic. Cycle of 52 days for Crystal Eye, 61 days for the ISS; for NUSES (sun-synchronous) only with the seasons |
-| $\beta^* = \rho$ | the threshold above which there is no eclipse | the altitude | fixed for a circular orbit |
-| largest $\lvert\beta\rvert$ of the mission | whether there are periods with no eclipse | the inclination (plus the 23.44° tilt of the Earth's axis) | fixed: Crystal Eye never reaches $\beta^*$, so it has an eclipse on every orbit; the ISS exceeds it, so it has days of full sunlight |
-| $T_n$ | the length of one orbit, which sets the scale of the eclipse | the altitude | fixed |
 
 **In practice:** to know the eclipses of a mission, follow $\beta(t)$ for the whole
 mission and compare it with $\beta^*$.
 :::
-
-## The beta angle
-
-```{figure} img/slide-14.png
-:width: 100%
-
-*The beta angle*
-```
-
-**Why $\sin\beta = \hat{\mathbf s}\cdot\hat{\mathbf n}$.** The angle between the Sun and the
-orbit normal is $90° - \beta$, and $\cos(90° - \beta) = \sin\beta$. So one dot product
-gives $\beta$, with its sign: $\beta > 0$ when the Sun is on the side of the plane where
-$\hat{\mathbf n}$ points.
 
 **Why the cycle lasts $360°/|\dot\Omega - 0.9856°/\text{day}|$.** $\beta$ depends on where
 the node is with respect to the Sun. The node moves at $\dot\Omega$, the Sun moves along
@@ -75,26 +58,7 @@ with its axis opposite to the Sun. The satellite is in shadow when it is on the 
 side ($\mathbf r\cdot\hat{\mathbf s} < 0$) and its distance from the axis is smaller
 than $R$. 
 
-**The formula, step by step.**
-
-1. Let $\psi$ be the angle of the satellite along the orbit, counted from the point
-   nearest to the Sun. The Sun is $\beta$ above the plane, so
-   $\mathbf r\cdot\hat{\mathbf s} = a\cos\beta\cos\psi$.
-2. The squared distance from the axis of the shadow is:
-   $d^2 = a^2 - (a\cos\beta\cos\psi)^2 = a^2(1 - \cos^2\beta\cos^2\psi)$.
-3. In shadow: $d < R$. Dividing by $a^2$ and using $\sin\rho = R/a$:
-
-$$
-1 - \cos^2\beta\cos^2\psi < \sin^2\rho
-\quad\Longleftrightarrow\quad
-\cos^2\beta\cos^2\psi > \cos^2\rho
-\quad\Longleftrightarrow\quad
-|\cos\psi| > \frac{\cos\rho}{\cos\beta}
-$$
-
-4. On the night side $\cos\psi < 0$, so the shadow is the arc around $\psi = 180°$ with
-   half-width $\arccos(\cos\rho/\cos\beta)$. Its whole width, divided by 360°, is the
-   fraction of the revolution in shadow; multiplied by $T_n$ it gives the duration:
+$T_n$ it gives the duration:
 
 $$
 D = \frac{2\arccos(\cos\rho/\cos\beta)}{2\pi}\,T_n = \frac{T_n}{\pi}\,\arccos\!\left(\frac{\cos\rho}{\cos\beta}\right)
@@ -106,6 +70,16 @@ $|\beta| = \rho$ the orbit barely touches the edge of the shadow; above it, it p
 the shadow without entering. The same condition written with distances is the one on the
 slide: $a\sin|\beta|$ is how far the orbital plane is from the axis of the shadow, and
 it must be smaller than $R$.
+
+:::{admonition}
+:class: important
+**What to monitor**
+
+| parameter | what it tells | what sets it | how it changes |
+|---|---|---|---|
+| $\beta$ | how high the Sun is above the orbital plane | the orbital plane ($i$, $\Omega$) and the position of the Sun | every day: the node drifts (J2) and the Sun moves along the ecliptic. Cycle of 52 days for Crystal Eye, 61 days for the ISS; for NUSES (sun-synchronous) only with the seasons |
+| $\beta^* = \rho$ | the threshold above which there is no eclipse | the altitude | fixed for a circular orbit |
+| $T_n$ | the length of one orbit, which sets the scale of the eclipse | the altitude | fixed |
 
 ## A whole mission of eclipses
 
