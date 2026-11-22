@@ -51,14 +51,18 @@ $$
 - The FoV is a cone fixed to the detector, around the zenith, so it turns with it and
   sweeps the sky.
 
-During one revolution $\theta$ of a source goes from a minimum, when the zenith passes
-closest to it, to a maximum half an orbit later. 
+During one revolution $\theta$ goes from $|\beta_\mathrm{src}|$ when the zenith passes
+closest to it, to $180° - |\beta_\mathrm{src}|$, so $\beta_\mathrm{src}$ tells in
+advance what the rule on $\theta$ will give over the **whole orbit**:
 
-- A source close to the orbital plane ($\beta_\mathrm{src} \approx 0$) sweeps almost the
-  whole range on every revolution, from the zenith to the nadir: it enters the FoV and
-  goes behind the Earth once per orbit.
-- A source far from the plane never comes near the zenith; if $|\beta_\mathrm{src}| > \rho$,
-  $\theta$ never exceeds $180° - \rho$ and the source is never hidden by the Earth.
+- the maximum of $\theta$, $180° - |\beta_\mathrm{src}|$, passes $180° - \rho$ only if
+  $|\beta_\mathrm{src}| < \rho$: the source is hidden during this orbit;
+- the minimum of $\theta$, $|\beta_\mathrm{src}|$, goes below FoV/2 only if
+  $|\beta_\mathrm{src}| \le$ FoV/2: the source enters the cone during this orbit.
+
+$\beta_\mathrm{src}$:
+the angle of the source from the orbital plane, $\sin\beta_\mathrm{src} = \hat{\mathbf k}\cdot\hat{\mathbf h}$,
+the same as $\beta$ for the Sun.
 
 :::{admonition} What to monitor
 :class: important
@@ -70,15 +74,6 @@ closest to it, to a maximum half an orbit later.
 | $\rho$ | the size of the Earth disc | the altitude (and the absorbing atmosphere, $h_\mathrm{atm}$) | fixed |
 | FoV/2 | the size of the detector cone | the instrument | fixed |
 
-**What follows from $\beta_\mathrm{src}$** (the same logic as $\beta$ for eclipses)
-
-- $\beta_\mathrm{src} \approx 0$, the source in the orbital plane: hidden on every orbit,
-  for the longest time, 37 % of the orbit at 550 km.
-- $0 < |\beta_\mathrm{src}| < \rho$: hidden on every orbit, for less time as
-  $|\beta_\mathrm{src}|$ grows.
-- $|\beta_\mathrm{src}| \ge \rho$: **never hidden** by the Earth.
-- With a limited FoV: if $|\beta_\mathrm{src}| >$ FoV/2 the source **never enters the
-  cone**, because the zenith never gets closer to it than $|\beta_\mathrm{src}|$.
 :::
 
 ## The exposure map of a Keplerian orbit
