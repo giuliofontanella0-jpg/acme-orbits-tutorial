@@ -52,11 +52,7 @@ $$
   sweeps the sky.
 
 During one revolution $\theta$ of a source goes from a minimum, when the zenith passes
-closest to it, to a maximum half an orbit later. The zenith moves in the orbital plane,
-so it can never get closer to the source than the angle of the source from that plane:
-the minimum is $|\beta_\mathrm{src}|$ and the maximum is $180° - |\beta_\mathrm{src}|$.
-On the way, $\theta$ crosses the two limits of the rule: the source is in the FoV while
-$\theta(t) \le \mathrm{FoV}/2$, and behind the Earth while $\theta(t) > 180° - \rho$.
+closest to it, to a maximum half an orbit later. 
 
 - A source close to the orbital plane ($\beta_\mathrm{src} \approx 0$) sweeps almost the
   whole range on every revolution, from the zenith to the nadir: it enters the FoV and
