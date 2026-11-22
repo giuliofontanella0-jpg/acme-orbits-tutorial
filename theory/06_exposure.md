@@ -60,6 +60,30 @@ closest to it, to a maximum half an orbit later.
 - A source far from the plane never comes near the zenith; if $|\beta_\mathrm{src}| > \rho$,
   $\theta$ never exceeds $180° - \rho$ and the source is never hidden by the Earth.
 
+:::{admonition} One rule, two ways to use it
+:class: tip
+
+There is **only one visibility rule**: the one on $\theta$ in the table at the top of the
+page. It answers *"is the source visible **now**?"*.
+
+$\beta_\mathrm{src}$ is **not a second rule**. During one revolution $\theta$ goes from
+$|\beta_\mathrm{src}|$ to $180° - |\beta_\mathrm{src}|$, so $\beta_\mathrm{src}$ tells in
+advance what the rule on $\theta$ will give over the **whole orbit**:
+
+- the maximum of $\theta$, $180° - |\beta_\mathrm{src}|$, passes $180° - \rho$ only if
+  $|\beta_\mathrm{src}| < \rho$: the source is hidden during this orbit;
+- the minimum of $\theta$, $|\beta_\mathrm{src}|$, goes below FoV/2 only if
+  $|\beta_\mathrm{src}| \le$ FoV/2: the source enters the cone during this orbit.
+
+| question | angle | used in the notebook for |
+|---|---|---|
+| is the source visible **now**? | $\theta$ | exposure maps, entry and exit of the Crab (sections 7 and 8) |
+| is it hidden **during this orbit**, and for how long? | $\beta_\mathrm{src}$ | the effect of J2 day by day (section 9) |
+
+The eclipses work in the same way: $\beta$ is the summary over one orbit of the same rule
+on $\theta$, with the Sun as the source.
+:::
+
 :::{admonition} What to monitor
 :class: important
 

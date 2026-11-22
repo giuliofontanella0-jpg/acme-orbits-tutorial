@@ -33,6 +33,12 @@ $|\beta|$ grows. It changes little at first and drops fast near $\beta^*$:
 
 **In practice:** to know the eclipses of a mission, follow $\beta(t)$ for the whole
 mission and compare it with $\beta^*$.
+
+**Instant by instant.** At a given instant the Sun is hidden when the angle between the
+zenith and the Sun exceeds $180° - \rho$: the Sun is then inside the disc of the Earth.
+This is the same rule on $\theta$ used for the sources in section 6, with the Sun as the
+source. $\beta$ summarises that rule over one whole orbit, as $\beta_\mathrm{src}$ does
+for a source.
 :::
 
 **Why the cycle lasts $360°/|\dot\Omega - 0.9856°/\text{day}|$.** $\beta$ depends on where
