@@ -1,0 +1,11 @@
+/* Use the whole width of the window, so the slides are as large as possible. */
+.bd-page-width {
+  max-width: 100% !important;
+}
+.bd-main .bd-content .bd-article-container {
+  max-width: 100% !important;
+}
+/* Keep the "on this page" column on the right narrow. */
+.bd-sidebar-secondary {
+  max-width: 15rem;
+}
