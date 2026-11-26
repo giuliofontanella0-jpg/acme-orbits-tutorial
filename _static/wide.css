@@ -9,3 +9,48 @@
 .bd-sidebar-secondary {
   max-width: 15rem;
 }
+
+/* Larger body text (theory pages and the rest of the book). */
+.bd-article-container .bd-article {
+  font-size: 1.15rem;
+}
+
+/* Live Code (Thebe, CodeMirror 5): colours readable in both light and dark mode. */
+.thebelab-cell .CodeMirror {
+  background: #f6f8fa;
+  color: #1f2328;
+}
+.thebelab-cell .cm-keyword  { color: #8250df; font-weight: 600; }
+.thebelab-cell .cm-def      { color: #0550ae; }
+.thebelab-cell .cm-variable { color: #1f2328; }
+.thebelab-cell .cm-variable-2, .thebelab-cell .cm-property { color: #24292f; }
+.thebelab-cell .cm-builtin  { color: #953800; }
+.thebelab-cell .cm-string, .thebelab-cell .cm-string-2 { color: #0a3069; }
+.thebelab-cell .cm-number   { color: #116329; }
+.thebelab-cell .cm-comment  { color: #6e7781; font-style: italic; }
+.thebelab-cell .cm-operator { color: #cf222e; }
+.thebelab-cell .cm-meta     { color: #953800; }
+
+html[data-theme="dark"] .thebelab-cell .CodeMirror {
+  background: #22272e;
+  color: #e6edf3;
+}
+html[data-theme="dark"] .thebelab-cell .CodeMirror-cursor { border-left-color: #e6edf3; }
+html[data-theme="dark"] .thebelab-cell .CodeMirror-selected,
+html[data-theme="dark"] .thebelab-cell .CodeMirror-focused .CodeMirror-selected { background: #3b4452; }
+html[data-theme="dark"] .thebelab-cell .CodeMirror-gutters { background: #22272e; border-color: #444c56; }
+html[data-theme="dark"] .thebelab-cell .cm-keyword  { color: #f47067; }
+html[data-theme="dark"] .thebelab-cell .cm-def      { color: #6cb6ff; }
+html[data-theme="dark"] .thebelab-cell .cm-variable { color: #e6edf3; }
+html[data-theme="dark"] .thebelab-cell .cm-variable-2,
+html[data-theme="dark"] .thebelab-cell .cm-property { color: #cdd9e5; }
+html[data-theme="dark"] .thebelab-cell .cm-builtin  { color: #f69d50; }
+html[data-theme="dark"] .thebelab-cell .cm-string,
+html[data-theme="dark"] .thebelab-cell .cm-string-2 { color: #96d0ff; }
+html[data-theme="dark"] .thebelab-cell .cm-number   { color: #8ddb8c; }
+html[data-theme="dark"] .thebelab-cell .cm-comment  { color: #9da7b3; font-style: italic; }
+html[data-theme="dark"] .thebelab-cell .cm-operator { color: #f47067; }
+html[data-theme="dark"] .thebelab-cell .cm-meta     { color: #f69d50; }
+/* Text printed by the cells */
+html[data-theme="dark"] .thebelab-cell .jp-OutputArea-output pre,
+html[data-theme="dark"] .thebelab-cell .thebelab-output pre { color: #e6edf3; }
