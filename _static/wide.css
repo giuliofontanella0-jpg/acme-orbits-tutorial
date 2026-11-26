@@ -54,3 +54,20 @@ html[data-theme="dark"] .thebelab-cell .cm-meta     { color: #f69d50; }
 /* Text printed by the cells */
 html[data-theme="dark"] .thebelab-cell .jp-OutputArea-output pre,
 html[data-theme="dark"] .thebelab-cell .thebelab-output pre { color: #e6edf3; }
+
+/* "# TODO" lines of the exercises: bold violet, in both modes. Keywords in light mode
+   are no longer violet, so the TODOs stand out. */
+.thebelab-cell .cm-keyword { color: #cf222e; }
+.thebelab-cell .cm-operator { color: #57606a; }
+.todo-mark, .thebelab-cell .cm-todo {
+  color: #8a2be2 !important;
+  background: #f1e6ff;
+  font-weight: 700;
+  font-style: normal !important;
+  border-radius: 3px;
+}
+html[data-theme="dark"] .todo-mark,
+html[data-theme="dark"] .thebelab-cell .cm-todo {
+  color: #d8b4fe !important;
+  background: rgba(168, 85, 247, 0.22);
+}
