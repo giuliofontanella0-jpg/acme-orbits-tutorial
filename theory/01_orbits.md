@@ -79,8 +79,8 @@ satellite.
 *Our three missions*
 ```
 
-They cover three typical inclinations of LEO missions: a low
-inclination (Crystal Eye, 37°), a medium one (ISS, 51.6°) and a sun-synchronous one
+They cover three typical inclinations of LEO missions: a nearly
+equatorial one (Crystal Eye, 5°), a medium one (ISS, 51.6°) and a sun-synchronous one
 (NUSES, 97.6°). The same notebook runs on all three, so every result can be compared.
 
 **Why a convention for the RAAN.** $i$ and the altitude are fixed by the launch site and

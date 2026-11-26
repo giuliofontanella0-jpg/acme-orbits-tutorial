@@ -40,7 +40,7 @@ the node is with respect to the Sun. The node moves at $\dot\Omega$, the Sun mov
 the ecliptic at $0.9856°$ per day: the angle between them changes at the difference of
 the two rates, and $\beta$ repeats when this angle has changed by 360°.
 
-- Crystal Eye: $360 / |-5.957 - 0.986| = 360 / 6.943 = 51.9$ days.
+- Crystal Eye: $360 / |-7.431 - 0.986| = 360 / 8.417 = 42.8$ days.
 - ISS: $360 / |-4.947 - 0.986| = 360 / 5.933 = 60.7$ days.
 - NUSES: the two rates are equal, the denominator is zero and there is no cycle. The change follows the time of seasons,
 - because the Sun moves north and south of the equator during the year.
@@ -76,7 +76,7 @@ it must be smaller than $R$.
 
 | parameter | what it tells | what sets it | how it changes |
 |---|---|---|---|
-| $\beta$ | how high the Sun is above the orbital plane | the orbital plane ($i$, $\Omega$) and the position of the Sun | every day: the node drifts (J2) and the Sun moves along the ecliptic. Cycle of 52 days for Crystal Eye, 61 days for the ISS; for NUSES (sun-synchronous) only with the seasons |
+| $\beta$ | how high the Sun is above the orbital plane | the orbital plane ($i$, $\Omega$) and the position of the Sun | every day: the node drifts (J2) and the Sun moves along the ecliptic. Cycle of 43 days for Crystal Eye, 61 days for the ISS; for NUSES (sun-synchronous) only with the seasons |
 | $\beta^* = \rho$ | the threshold above which there is no eclipse | the altitude | fixed for a circular orbit |
 | $T_n$ | the length of one orbit, which sets the scale of the eclipse | the altitude | fixed |
 :::

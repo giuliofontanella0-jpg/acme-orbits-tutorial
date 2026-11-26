@@ -90,8 +90,8 @@ $$
 orbit by $\omega_E T_n$, about 24°, and the node itself drifts by $\dot\Omega T_n$ because
 of J2. Seen from the ground, the next node is therefore further west by
 $(\omega_E - \dot\Omega)\,T_n$. For Crystal Eye:
-$(360.9856 + 5.957)°/\text{day} \times 0.066282\ \text{days} = 24.32°$, of which only
-0.40° come from J2.
+$(360.9856 + 7.431)°/\text{day} \times 0.066154\ \text{days} = 24.37°$, of which only
+0.49° come from J2.
 
 **Why NUSES runs the opposite way.** The inclination is measured from the equator,
 eastward. With $i < 90°$ (Crystal Eye, ISS) the orbit is **prograde**: at the ascending

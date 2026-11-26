@@ -108,7 +108,7 @@ mission, and for each pixel the instants that satisfy the condition are counted.
 *One source: entry and exit behind the Earth*
 ```
 
-**What the figure shows.** The sky seen from Crystal Eye one minute before the Crab goes
+**What the figure shows.** The sky seen from Crystal Eye about 20 seconds before the Crab goes
 behind the Earth: the grey disc is the Earth, centred on the nadir, with angular radius
 $\rho$. The Crab is on its edge, at $\theta \approx 113°$.
 
@@ -124,6 +124,6 @@ $$
 \mathrm{JD}(t) = \mathrm{JD}(t_0) + \frac{t}{86400}
 $$
 
-For the first entry, JD 2462502.528426: the decimal part after .5 is the time since
-midnight, $0.028426 \times 86400 = 2456$ s $= 40$ min 56 s, that is 00:40:56 UTC.
+For the first entry, JD 2462502.527963: the decimal part after .5 is the time since
+midnight, $0.027963 \times 86400 = 2416$ s $= 40$ min 16 s, that is 00:40:16 UTC.
 
