@@ -61,9 +61,6 @@ from the **perigee**, the point of the orbit closest to the centre of the Earth:
 $\omega$ goes from the ascending node to the perigee, $\nu$ from the perigee to the
 satellite.
 
-- On an ellipse there is one closest point, so the perigee is well defined and so are
-  the two angles. Example: $\omega = 30°$ and $\nu = 60°$ put the satellite $90°$ after
-  the node.
 - On a circle every point is at the same distance $a$ from the centre: there is no
   perigee. $\omega$ has no end point and $\nu$ has no starting point.
 - The angle from the node to the satellite still exists, because it does not pass
